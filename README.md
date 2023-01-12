@@ -1,3 +1,3 @@
 # ccain002.github.io
 
-![Background](/rhog.png, width=100)
+![Background](/rhog.png | width=100)
