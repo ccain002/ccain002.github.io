@@ -40,24 +40,6 @@
 
     <section>
       <div class="container">
-        <h1>Code Validation Study</h1>
-        <p>Recently, I documented the basic machinery of FlexRT and subjected it to a rigorous battery of validation tests in <a href="https://arxiv.org/abs/2409.04521">Cain+24</a>. These included the tests presented in part I of the Cosmological Radiative Transfer Codes Comparison Project (<a href="https://arxiv.org/abs/astro-ph/0603199">Iliev+06</a>), and a test against the RadHydro code of <a href="https://arxiv.org/abs/astro-ph/0612406">Trac+07</a>, which uses an adaptive ray tracing algorithm similar to that in FlexRT. The image below compares FlexRT to CRTCP codes in perhaps the simplest controlled RT test possible - the growth of an HII region around a single isotropic source in a uniform density, isothermal medium. FlexRT has two "modes" - one that solves a standard formulation of the RT equation, and another that uses a more general approach that admits the use of a flexible sub-grid model for the opacity.</p>
-
-        <figure class="left">
-          <a href="images/flexrt_vs_crtcp.png"><img src="images/flexrt_vs_crtcp.png" alt="FlexRT compared to C2-Ray and IFT on an isolated HII region test"></a>
-          <figcaption><a href="https://arxiv.org/abs/2409.04521">Cain+24</a></figcaption>
-        </figure>
-        <figure class="left" style="clear: left;">
-          <a href="images/flexrt_vs_radhydro.png"><img src="images/flexrt_vs_radhydro.png" alt="Ionization maps from RadHydro and FlexRT with difference maps"></a>
-          <figcaption><a href="https://arxiv.org/abs/2409.04521">Cain+24</a></figcaption>
-        </figure>
-        <p>The first two columns compare maps of the neutral fraction, but through the center of the expanding HII region, in FlexRT's "standard mode" to a similar test using the C2-Ray code. The other two columns compare FlexRT's "generalized opacity mode" to the IFT code. The good agreement between FlexRT and these established codes is repeated across full landscape of tests presented in Iliev+06.</p>
-        <p>The second image compares maps of the ionization field in a full-scale reionization simulation run with the RadHydro code (top row) and FlexRT (middle row). The bottom row shows difference maps. The level of visual agreement between the codes is striking, and conclusively shows that FlexRT's adaptive ray tracing scheme can efficiently and accurately simulate the growth of ionized regions, a crucial ingredient for forward-modeling nearly all reionization observables. Similar comparisons also demonstrate that FlexRT accurately captures the growth of and fluctuations in the ionizing background during and after reionization. Check out the linked studies for more details.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
         <h1>The Reduced Speed of Light</h1>
         <p>The reduced speed of light approximation (RSLA) uses a speed of light smaller than the physical value in RT simulations to increase the size of the RT timestep, thereby allowing the simulation to run more quickly. Unfortunately, this procedure has been shown to introduce significant inaccuracies in the reionization history and ionizing background near the end of reionization. In a recent single-author work (<a href="https://arxiv.org/abs/2409.11467">Cain+24</a>), I showed that the RSLA is, to a good approximation, equivalent to a redshift-dependent re-scaling of the global ionizing emissivity. In modeling frameworks such as FlexRT, where the emissivity is a free parameter determined by the user, one can simply run an RSLA simulation and then re-scale the emissivity at the end, reducing computational cost significantly. The image below shows the accuracy of this re-scaling for modeling the mean transmission of the Lyman alpha forest. On the left, the bold curves show RSLA simulations with reduced speeds of light of 0.3, 0.2, and 0.1 times the true value.</p>
 
@@ -71,6 +53,24 @@
         </figure>
         <p>The right panel shows the corresponding emissivities. The faded colored curves show full speed of light simulations after applying my re-scaling procedure, and the grey faded curves show the same, but without any re-scaling. The bottom panels show the ratios of the faded and bold colored curves. These are within 20% for reduced speeds of light as low as 0.2 times the true value, enabling a factor of 5 speedup without significant loss of accuracy.</p>
         <p>The second image compares maps of the photo-ionization rates at z = 6 in each type of simulation for the case with 0.2 times the true speed of light. The lower right panel compares the distributions of photo-ionization rate for all three speed of light values. The comparison shows that RSLA simulations that use my re-scaling procedure still have inaccuracies in the spatial fluctuations of the ionizing background, and these become large enough to significantly affect key observables when the speed of light is 0.1 times it's true value, which limits the use of this method. Still, a factor of 5 speedup is a substantial improvement that will help enable parameter space studies of reionization using RT simulations.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>Code Validation Study</h1>
+        <p>Recently, I documented the basic machinery of FlexRT and subjected it to a rigorous battery of validation tests in <a href="https://arxiv.org/abs/2409.04521">Cain+24</a>. These included the tests presented in part I of the Cosmological Radiative Transfer Codes Comparison Project (<a href="https://arxiv.org/abs/astro-ph/0603199">Iliev+06</a>), and a test against the RadHydro code of <a href="https://arxiv.org/abs/astro-ph/0612406">Trac+07</a>, which uses an adaptive ray tracing algorithm similar to that in FlexRT. The image below compares FlexRT to CRTCP codes in perhaps the simplest controlled RT test possible - the growth of an HII region around a single isotropic source in a uniform density, isothermal medium. FlexRT has two "modes" - one that solves a standard formulation of the RT equation, and another that uses a more general approach that admits the use of a flexible sub-grid model for the opacity.</p>
+
+        <figure class="left">
+          <a href="images/flexrt_vs_crtcp.png"><img src="images/flexrt_vs_crtcp.png" alt="FlexRT compared to C2-Ray and IFT on an isolated HII region test"></a>
+          <figcaption><a href="https://arxiv.org/abs/2409.04521">Cain+24</a></figcaption>
+        </figure>
+        <figure class="left" style="clear: left;">
+          <a href="images/flexrt_vs_radhydro.png"><img src="images/flexrt_vs_radhydro.png" alt="Ionization maps from RadHydro and FlexRT with difference maps"></a>
+          <figcaption><a href="https://arxiv.org/abs/2409.04521">Cain+24</a></figcaption>
+        </figure>
+        <p>The first two columns compare maps of the neutral fraction, but through the center of the expanding HII region, in FlexRT's "standard mode" to a similar test using the C2-Ray code. The other two columns compare FlexRT's "generalized opacity mode" to the IFT code. The good agreement between FlexRT and these established codes is repeated across full landscape of tests presented in Iliev+06.</p>
+        <p>The second image compares maps of the ionization field in a full-scale reionization simulation run with the RadHydro code (top row) and FlexRT (middle row). The bottom row shows difference maps. The level of visual agreement between the codes is striking, and conclusively shows that FlexRT's adaptive ray tracing scheme can efficiently and accurately simulate the growth of ionized regions, a crucial ingredient for forward-modeling nearly all reionization observables. Similar comparisons also demonstrate that FlexRT accurately captures the growth of and fluctuations in the ionizing background during and after reionization. Check out the linked studies for more details.</p>
       </div>
     </section>
 
