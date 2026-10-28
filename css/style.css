@@ -1,0 +1,277 @@
+/* ==========================================================================
+   Christopher Cain — personal website stylesheet
+   Colors and fonts approximate the earlier Wix site.
+   To change a page's background color, edit the variables just below.
+   ========================================================================== */
+
+:root {
+  --nav-bg:        #b5c4d8;  /* light blue menu bar */
+  --hero-box:      rgba(198, 135, 38, 0.88); /* gold box on home banner */
+  --about-bg:      #d5d4d3;  /* grey */
+  --research-bg:   #ffcb81;  /* orange */
+  --talks-bg:      #ecdb78;  /* yellow */
+  --footer-bg:     #404040;  /* dark grey */
+  --flexrt-bg:     #cecece;
+  --igm-bg:        #e9c58c;
+  --obs-bg:        #c8e5f0;
+
+  --text:          #1d1d1d;
+  --footer-text:   #f2f2f2;
+  --link:          #1d1d1d;
+  --link-hover:    #7a3e00;
+
+  --serif-body:    "Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --serif-head:    "Libre Baskerville", Baskerville, Georgia, serif;
+
+  --content-width: 960px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 60px; }
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--serif-body);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+
+h1, h2, h3, h4 {
+  font-family: var(--serif-head);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 1.2em 0 0.5em;
+}
+h1 { font-size: 2.1rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 0.9em; }
+
+/* Centered column that holds the content of every section */
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 24px 0 40px; }
+section::after { content: ""; display: table; clear: both; }  /* contain floated figures */
+
+/* ---------- Navigation bar ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--nav-bg);
+}
+.site-nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 12px 24px;
+  max-width: var(--content-width);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 36px;
+}
+.site-nav a {
+  font-family: var(--serif-head);
+  font-size: 1rem;
+  color: #111;
+}
+
+/* ---------- Home-page banner ---------- */
+.hero {
+  position: relative;
+  background: #000 url("../images/hero-reionization.jpg") center / cover no-repeat;
+  padding: 90px 24px 50px;
+  text-align: center;
+}
+.hero-box {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 28px 32px 32px;
+  background: var(--hero-box);
+}
+.hero-box h1 { margin: 0 0 0.6em; font-size: 2.2rem; }
+.hero-box h2 {
+  margin: 0 0 0.3em;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+.hero-box p {
+  margin: 0;
+  font-family: var(--serif-head);
+  font-style: italic;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.image-credit {
+  margin: 48px auto 0;
+  max-width: 520px;
+  font-size: 0.8rem;
+  color: #ddd;
+}
+.image-credit a { color: #ddd; }
+
+/* ---------- Page banners on the research pages ---------- */
+.banner {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  background-position: center;
+  background-size: cover;
+}
+.banner h1 {
+  margin: 0;
+  padding: 40px 0;
+  font-size: 2.6rem;
+  max-width: 640px;
+}
+.banner.light h1 { color: #111; text-shadow: 0 0 6px #fff, 0 0 16px rgba(255, 255, 255, 0.9); }
+.banner.dark h1  { color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+
+/* ---------- Section background colors ---------- */
+.bg-about    { background: var(--about-bg); }
+.bg-research { background: var(--research-bg); }
+.bg-talks    { background: var(--talks-bg); }
+.bg-flexrt   { background: var(--flexrt-bg); }
+.bg-igm      { background: var(--igm-bg); }
+.bg-obs      { background: var(--obs-bg); }
+
+/* ---------- About me ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.about-grid .portrait { width: 240px; }
+.cv-button {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 8px 40px;
+  border: 1px solid #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.cv-button:hover { background: rgba(0, 0, 0, 0.06); }
+
+/* ---------- Figures (float right/left with text wrapping) ---------- */
+figure { margin: 0 0 18px; }
+figure.right { float: right; width: 45%; margin-left: 28px; }
+figure.left  { float: left;  width: 45%; margin-right: 28px; }
+figure.wide  { width: 100%; clear: both; }
+figure.small { width: 36%; }
+.figure-stack { float: left; width: 45%; margin-right: 28px; }
+figcaption {
+  text-align: right;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+figure a img { cursor: zoom-in; }
+
+/* Grid of observatory pictures on the home page */
+.obs-grid {
+  float: right;
+  width: 52%;
+  margin-left: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.obs-grid figure { position: relative; margin: 0; }
+.obs-grid figure.span2 { grid-column: span 2; }
+.obs-grid img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.obs-grid figure.span2 img { aspect-ratio: 2.75 / 1; }
+.obs-grid .label,
+.obs-grid .credit {
+  position: absolute;
+  color: #fff;
+  font-style: italic;
+  font-size: 0.75rem;
+  text-shadow: 0 1px 3px #000;
+}
+.obs-grid .label  { top: 4px; left: 8px; }
+.obs-grid .credit { bottom: 4px; right: 8px; }
+
+/* Research blurbs on the home page */
+.research-item { clear: both; padding-top: 4px; }
+.research-item h3 { font-style: italic; font-family: var(--serif-body); font-size: 1.7rem; font-weight: 500; }
+
+/* ---------- Talks table ---------- */
+.talks-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.talks-table th {
+  text-align: left;
+  font-family: var(--serif-head);
+  font-weight: 400;
+  padding: 6px 8px;
+}
+.talks-table td {
+  border: 1px solid #333;
+  padding: 8px;
+  vertical-align: middle;
+}
+.talks-table td:first-child { white-space: nowrap; }
+.table-note { text-align: right; font-size: 0.9rem; margin-top: 6px; }
+
+.news-list { padding-left: 1.3em; font-size: 1.15rem; }
+.news-list li { margin-bottom: 0.4em; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 28px 0;
+}
+.site-footer .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.site-footer a { color: var(--footer-text); }
+.site-footer .name {
+  font-family: var(--serif-head);
+  font-style: italic;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+}
+.site-footer p { margin: 0 0 6px; }
+.site-footer .affil p { font-style: italic; font-size: 0.95rem; }
+
+/* ---------- Phones and narrow screens ---------- */
+@media (max-width: 720px) {
+  body { font-size: 18px; }
+  .site-nav ul { gap: 6px 20px; justify-content: center; }
+  .hero { padding-top: 50px; }
+  .banner h1 { font-size: 1.9rem; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-grid .portrait { margin: 0 auto; }
+  figure.right, figure.left, figure.small, .figure-stack, .obs-grid {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .obs-grid { margin-bottom: 18px; }
+  .talks-table, .talks-table tbody, .talks-table tr, .talks-table td { display: block; width: 100%; }
+  .talks-table thead { display: none; }
+  .talks-table tr { border: 1px solid #333; margin-bottom: 10px; }
+  .talks-table td { border: none; padding: 4px 10px; }
+  .talks-table td:first-child { font-weight: 700; padding-top: 8px; }
+  .site-footer .container { grid-template-columns: 1fr; }
+}

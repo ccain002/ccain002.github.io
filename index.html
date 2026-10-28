@@ -1,10 +1,202 @@
-
 <!doctype html>
-<html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christopher Cain</title>
+  <meta name="description" content="Christopher Cain — Beus Postdoctoral Fellow at Arizona State University studying cosmic reionization and the intergalactic medium.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Menu bar (same on every page; edit all four files if you change it) ===== -->
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#talks">Talks &amp; News</a></li>
+      <li><a href="files/CV.pdf">My CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Banner ===== -->
+  <header class="hero">
+    <div class="hero-box">
+      <h1>Christopher Cain</h1>
+      <h2>Research Interests:</h2>
+      <p>Cosmic reionization, intergalactic medium, high-redshift galaxies, high-redshift quasar absorption spectra, cosmic microwave background</p>
+    </div>
+    <p class="image-credit">Image source: <a href="https://aasnova.org/2022/04/26/turning-on-the-lights-modeling-the-sources-of-cosmic-reionization/">AAS Nova, "Turning on the Lights: Modeling the Sources of Cosmic Reionization" (2022)</a></p>
+  </header>
+
+  <main>
+
+    <!-- ===== About me ===== -->
+    <section id="about" class="bg-about">
+      <div class="container">
+        <h1>ABOUT ME</h1>
+        <div class="about-grid">
+          <div>
+            <img class="portrait" src="images/portrait.jpg" alt="Photo of Christopher Cain">
+            <a class="cv-button" href="files/CV.pdf">View my CV</a>
+          </div>
+          <div>
+            <p>I am presently a postdoctoral fellow at Arizona State University working in collaboration with Judd Bowman, Rogier Windhorst, and Alex Van Engelen, and others at the School of Earth and Space Exploration. I did my Ph.D. at the University of California, Riverside with Anson D'Aloisio.</p>
+            <p>My primary research focus is cosmic reionization - understanding when and how it happened, the sources responsible for driving it, and the role that the intergalactic medium played in the process. I address these questions with radiative transfer simulations run with my code, FlexRT, which is designed to simulation reionization accurately and effeciently. I am interested in using simulations to interpret a broad range of observational data probing reionization, including high-redshift quasar absorption spectra, high-redshift galaxy observations with JWST, precision measurements of the cosmic microwave background, and high-redshift intensity mapping experiments. I am also interested in developing improved methods for simulating reionization accurately and effeciently. These include new simulation-driven models for the physics at play on small scales in the intergalactic medium during and after reionization.</p>
+            <figure class="wide">
+              <a href="images/cosmic-timeline-gnedin-madau-2024.jpg"><img src="images/cosmic-timeline-gnedin-madau-2024.jpg" alt="Timeline of cosmic history from the Big Bang through reionization"></a>
+              <figcaption>Gnedin &amp; Madau 2024</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Research ===== -->
+    <section id="research" class="bg-research">
+      <div class="container">
+        <h1>My Research</h1>
+
+        <div class="research-item">
+          <h3><a href="igm-small-scales.html">The Intergalactic Medium on Small Scales</a></h3>
+          <figure class="right">
+            <a href="igm-small-scales.html"><img src="images/rho_map.png" alt="Slice through a 2 Mpc/h simulation of IGM gas density"></a>
+          </figure>
+          <p>During reionization, the intergalactic medium (IGM) was subjected to rapid and intense heating by cosmological ionization fronts. These fronts impulsively heated the IGM from ~100 K to ~20000 K on a timescale of ~1 Myr. The subsequent response of dense intergalactic gas clumps to this heating process played a crucial role in determining the physical conditions in the IGM and its effect on the ongoing reionization process thereafter.</p>
+          <p>The image on the right pictures a slice through a 2 Mpc/h simulation of IGM gas dynamics shown just after the box was re-ionized. The over-dense (red) gas clumps are sites of high recombination rates, and are responsible for absorbing much of the hydrogen-ionizing radiation produced by the first galaxies during reionization. Because of their small (~kpc) sizes and their tendency to self-shield against ionizing radiation, modeling their dynamics and effects on reionization demands high spatial resolution and detailed physics. Click the link above to see my work on this topic.</p>
+        </div>
+
+        <div class="research-item">
+          <h3><a href="flexrt.html">Simulating Reionization with Flexible Radiative Transfer</a></h3>
+          <figure class="right">
+            <a href="flexrt.html"><img src="images/ion_field_one_panel.png" alt="Map of neutral and ionized regions in a 200 Mpc/h FlexRT simulation"></a>
+          </figure>
+          <p>Modeling reionization's observables requires modeling the transfer of ionizing radiation through the IGM on 10-100 Mpc scales, characteristic of the large-scale clustering of galaxies. Capturing these scales, whilst also accounting for the ~kpc scales characterizing IGM physics and the yet smaller scales associated with the escape of ionizing radiation from galaxies is a formidable computational task. In addition, exploring and constraining the large parameter space of reionization requires running a large number of simulations.</p>
+          <p>I have developed a novel radiative transfer code, FlexRT (Flexible Radiative Transfer) designed to meet the challenging demands outlined above. The code uses adaptive ray tracing to enable a fast, flexible, and accurate treatment of the radiative transfer equation. It is also equipped with a sub-grid model for the intergalactic ionizing opacity based on the high-resolution IGM simulations described above. The image on the right shows a map of neutral and ionized regions from a FlexRT simulation in a 200 Mpc/h box. FlexRT is designed with the goal of meeting the simultaneous demands of speed and accuracy required by the next generation of reionization observations.</p>
+        </div>
+
+        <div class="research-item">
+          <h3><a href="interpreting-observations.html">Interpreting Observations of the High-Redshift Universe</a></h3>
+          <div class="obs-grid">
+            <figure>
+              <img src="images/cmb_esa.jpg" alt="Map of the cosmic microwave background">
+              <span class="label">CMB</span><span class="credit">Image: ESA</span>
+            </figure>
+            <figure>
+              <img src="images/jwst.jpg" alt="The James Webb Space Telescope">
+              <span class="label">JWST</span><span class="credit">Image: NASA</span>
+            </figure>
+            <figure>
+              <img src="images/roman.jpg" alt="The Roman Space Telescope">
+              <span class="label">Roman Telescope</span><span class="credit">Image: NASA</span>
+            </figure>
+            <figure>
+              <img src="images/quasar_physorg.jpg" alt="Artist's impression of a high-redshift quasar">
+              <span class="label">High-redshift quasar</span><span class="credit">Image: phys.org</span>
+            </figure>
+            <figure class="span2">
+              <img src="images/hera_panorama.jpg" alt="The HERA radio telescope">
+              <span class="label">HERA Radio Telescope</span><span class="credit">Image: Berkhout+24</span>
+            </figure>
+          </div>
+          <p>A chief goal of accurate reionization modeling is to enable accurate interpretation of observations of the high-redshift universe. These can be used to study when and how reionization occurred, and ultimately the properties of the ionizing sources responsible for it. Some of the many observational windows into reionization are pictured on the right. These include the cosmic microwave background, JWST, the forthcoming ROMAN telescope, an artist's impression of a high-redshift quasar, and the HERA radio telescope designed to detect the 21 signal from reionization. These and many other observational windows will continue to deliver a wealth of information about reionization. A central focus of my previous and ongoing work is to leverage the modeling frameworks I have developed to interpret a wide range of observations. Click the link above to learn more.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Talks & News ===== -->
+    <section id="talks" class="bg-talks">
+      <div class="container">
+        <h1>Talks &amp; News</h1>
+
+        <h2>Recent &amp; Upcoming Talks</h2>
+        <!-- To add a talk: copy one <tr>...</tr> block, paste it at the top, and edit it.
+             Put slides in files/talks/ and link to them like the others. -->
+        <table class="talks-table">
+          <thead>
+            <tr><th>Date</th><th>Title</th><th>Venue</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>May 30, 2025</td>
+              <td><a href="https://docs.google.com/presentation/d/1ImTFphkVRXPDhz1F0yKxjZq-hpd0m3aPSzjF9XL3Qq0/edit">Measuring the average escape fraction with high-z quasar data + HST/JWST</a></td>
+              <td><a href="https://cfc2025.us/index.html">CFC Conference, UT Austin</a></td>
+            </tr>
+            <tr>
+              <td>May 20, 2025</td>
+              <td><a href="files/talks/2025-05-20_Trieste_IGM-small-scale-structure.pdf">The effect of reionization on small-scale structure in the intergalactic medium</a></td>
+              <td><a href="https://sites.google.com/uw.edu/dusc/home">IGM-Galaxy Workshop, Trieste, Italy</a></td>
+            </tr>
+            <tr>
+              <td>April 29, 2025</td>
+              <td><a href="files/talks/2025-04-29_UW-DUSC_reionization-physics.pdf">Revealing the physics of reionization with high-redshift quasars, JWST observations, &amp; simulations of the IGM</a></td>
+              <td><a href="https://sites.google.com/uw.edu/dusc/home">DUSC Seminar @ University of Washington</a></td>
+            </tr>
+            <tr>
+              <!-- On Wix, this title linked to the Trieste slides by mistake. Add the right PDF to files/talks/ and link it here. -->
+              <td>March 24, 2025</td>
+              <td>Revealing the timeline and sources of reionization with high-redshift quasars and JWST observations</td>
+              <td><a href="https://sites.google.com/uw.edu/dusc/home">Journal Club talk at the University of Arizona</a></td>
+            </tr>
+            <tr>
+              <td>Dec. 3, 2024</td>
+              <td><a href="files/talks/2024-12-03_IAP-Paris_beginning-of-reionization.pdf">Chasing the beginning of reionization in the JWST era</a></td>
+              <td><a href="https://iapsymposium2024.sciencesconf.org/">40th IAP Symposium, Paris, France</a></td>
+            </tr>
+            <tr>
+              <td>Aug. 29, 2024</td>
+              <td><a href="files/talks/2024-08-29_KITP_tale-of-three-histories.pdf">A tale of three histories: distinguishing reionization scenarios in the JWST era</a></td>
+              <td><a href="https://www.kitp.ucsb.edu/activities/firstbillion-c24">Kalvi Institute, UC Santa Barbara</a></td>
+            </tr>
+            <tr>
+              <td>June 26, 2024</td>
+              <td><a href="files/talks/2024-06-26_Stockholm_tale-of-three-histories.pdf">A tale of three histories: distinguishing reionization scenarios in the JWST era</a></td>
+              <td><a href="https://indico.fysik.su.se/event/8499/"><em>Cosmic Dawn at High Latitudes</em> Conference, Stockholm, Sweden</a></td>
+            </tr>
+            <tr>
+              <td>June 28, 2023</td>
+              <td><a href="files/talks/2023-06-28_Heidelberg_ending-reionization-gracefully.pdf">Ending Reionization Gracefully: Properties of the ionizing photon sources at the end of reionization</a></td>
+              <td><em>Reionisation in the Summer</em> Conference, Heidelberg, Germany</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">See my CV (linked above) for a complete list</p>
+
+        <h2>News Highlights</h2>
+        <!-- To add news: copy one <li>...</li> line and paste it at the top of the list. -->
+        <ul class="news-list">
+          <li>Upcoming: check back soon for new updates on SAGUARO, the most largest and most comprehensive suite of simulations dedicated to studying gas dynamics in the IGM.</li>
+          <li>In <a href="https://arxiv.org/abs/2505.15899">Cain+25c</a>, we recently showed that including information about the end of reionization from the Lyman-alpha Forest of high-redshift quasars renders the CMB optical depth a sentive probe of reionization's duration - a key development in interpreting CMB observables.</li>
+          <li>New study (<a href="https://arxiv.org/abs/2504.21082">Cain+25b</a>): discovery and first characterization of sub-kpc scale turbulence in the intergalactic medium driven by pressure smoothing of filaments/mini-halos by reionization!</li>
+          <li>New paper (<a href="https://arxiv.org/abs/2503.08778">Cain+25a</a>) presenting measurements of the average ionizing photon escape fraction of the z &lt; 6 galaxy population using data from quasar spectra, HST, and JWST.</li>
+          <li>New papers on simulating the reionization epoch and interpreting high-redshift observations probing reionization! Check out <a href="https://arxiv.org/abs/2409.02989">Cain+24b</a> to see how multiple observations can be synergized to understand reionization's early stages. Also check out <a href="https://arxiv.org/abs/2409.04521">Cain+24c</a> and <a href="https://arxiv.org/abs/2409.11467">Cain+24d</a> for the latest progress towards fast, flexible RT for parameter space studies of reionization.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="affil">
+        <p class="name">CHRISTOPHER CAIN</p>
+        <p>Beus Postdoctoral Fellow</p>
+        <p>Beus Center for Cosmic Foundations</p>
+        <p>School of Earth &amp; Space Exploration</p>
+        <p>Arizona State University</p>
+      </div>
+      <div>
+        <p>Email: <a href="mailto:clcain3@asu.edu">clcain3@asu.edu</a></p>
+        <p>Address: 1151 S Forest Ave, Tempe, AZ</p>
+        <p>Office: ISTB4-496</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>

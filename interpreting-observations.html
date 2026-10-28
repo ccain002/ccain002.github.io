@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interpreting Observations | Christopher Cain</title>
+  <meta name="description" content="Using reionization simulations to interpret observations of the high-redshift universe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Menu bar (same on every page; edit all four files if you change it) ===== -->
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#talks">Talks &amp; News</a></li>
+      <li><a href="files/CV.pdf">My CV</a></li>
+    </ul>
+  </nav>
+
+  <header class="banner dark" style="background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('images/jwst.jpg');">
+    <div class="container">
+      <h1>Interpreting Observations of the High-Redshift Universe</h1>
+    </div>
+  </header>
+
+  <main class="bg-obs">
+
+    <section>
+      <div class="container">
+        <h1>The Mean Free Path</h1>
+        <p>The mean free path (MFP) is the average distance that an ionizing photon can travel through the IGM before being absorbed by a neutral hydrogen atom. It directly probes the opacity of the IGM to ionizing photons, and during reionization is sensitive to the distribution of surviving neutral regions. The MFP can be directly measured using the Lyman continuum spectra of high-redshift quasars. An unexpectedly low measured MFP at z = 6 by <a href="https://arxiv.org/abs/2103.16610">Becker+21</a> seemed to support the notion, already hinted at by Lyman alpha forest studies, the reionization was ongoing at that redshift. I led a follow-up study in <a href="https://arxiv.org/abs/2105.10511">Cain+21</a> that used my new RT code, FlexRT, to answer the question of which reionization scenarios were preferred by the new measurement. The image below compares the properties of several reionization models we considered, clockwise from upper left: the reionization history, MFP, ionizing emissivity, CMB optical depth, photo-ionization rage, and temperature at mean density.</p>
+        <figure class="left">
+          <a href="images/ion_history_emissivity.png"><img src="images/ion_history_emissivity.png" alt="Reionization history, MFP, emissivity, optical depth, photo-ionization rate and temperature for several models"></a>
+          <figcaption><a href="https://arxiv.org/abs/2105.10511">Cain+21</a></figcaption>
+        </figure>
+        <p>Our main finding was that the short MFP favors a scenario in which reionization ended late and rapidly, and was driven by faint galaxies. This can be seen by comparing the black dotted curve to the cyan and blue curves. The red curve shows a model in which enhanced IGM opacity at z &lt; 6 enables agreement with z = 5 MFP measurements without the need for a decline in emissivity at z &lt; 6 (see below for a follow-up study on this point).</p>
+
+        <figure class="left" style="clear: left;">
+          <a href="images/mfp_models.png"><img src="images/mfp_models.png" alt="New MFP measurements compared to models"></a>
+          <figcaption><a href="https://arxiv.org/abs/2308.04614">Zhu+23</a></figcaption>
+        </figure>
+        <p>I have also been involved in follow-up efforts to obtain a more complete set of MFP measurements at 5 &lt; z &lt; 6. Recently, <a href="https://arxiv.org/abs/2308.04614">Zhu+23</a> re-measured the z = 5 and 6 MFP, and provided new measurements at z = 5.3 and 5.6, using a expanded sample of high-redshift quasars from the <a href="https://arxiv.org/abs/2305.05053">XQR-30</a> survey. The top image on the right shows these new measurements alongside several models from the literature. The measurements are consistent with a steadily declining MFP from z = 5 to 6, and provide increased support for scenarios in which reionization ends at z &lt; 6.</p>
+        <figure class="left" style="clear: left;">
+          <a href="images/LyC_fit_plot.png"><img src="images/LyC_fit_plot.png" alt="Fits to Lyman continuum transmission profiles for two quasar lifetimes"></a>
+          <figcaption><a href="https://arxiv.org/abs/2311.06348">Roth+24</a></figcaption>
+        </figure>
+        <p>In a follow-up study (<a href="https://arxiv.org/abs/2311.06348">Roth+24</a>), led by an undergraduate at UC Riverside, we investigated the effect of ongoing reionization on the fidelity of the measurements themselves. These measurements are particularly challenging at z ~ 6, when the size of the quasar proximity zone becomes larger than the MFP itself - this necessitates modeling the quasar. The bottom image on the left shows fits to the Lyman continuum transmission profiles of high-redshift quasars using the model of Becker+21, which does not explicitly account for the presence of neutral islands. The panels show results for two different assumed quasar lifetimes - an important parameter when neutral gas may be close to the quasar when it turns on. Perhaps surprisingly, our main finding was that the Becker+21 model does a reasonably good job of recovering the true MFP even when islands are present. This indicates that measurements at z &gt; 5 can be reasonably interpreted as a signature of ongoing reionization.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>21 cm Cosmology</h1>
+        <figure class="left">
+          <a href="images/power_vs_k_21cm_sources_sinks.png"><img src="images/power_vs_k_21cm_sources_sinks.png" alt="21 cm power spectrum for several IGM absorption and source clustering models"></a>
+          <figcaption><a href="https://arxiv.org/abs/2207.11266">Cain+22</a></figcaption>
+        </figure>
+        <p>The redshifted cosmological 21 cm signal from neutral hydrogen is a powerful forthcoming probe of reionization and cosmic dawn. During reionization, the power spectrum of the 21 cm signal can provide valuable information about reionization's history and spatial morphology (sizes and shapes of ionized regions). 21 cm experiments such as the Hydrogen Epoch of Reionization Array (<a href="https://arxiv.org/abs/2401.04304">HERA</a>) are currently pursuing a detection of this signal. In <a href="https://arxiv.org/abs/2207.11266">Cain+22</a>, I studied the effects of IGM absorption on reionization's morphology, and its interplay with the effects how the ionizing sources cluster in space. The image on the left shows the 21 cm power spectrum for several combinations of models for absorption by the IGM and source clustering. The rows, from left to right, show results when the IGM is 20%, 50%, and 80% ionized by volume. The different colors/line styles denote different models for the IGM absorption, and each group of curves denotes a different model for the sources. The "democratic" and "oligarchic" models are scenarios where reionization is driven by the faintest (least clustered) and brightest (most clustered) galaxies, respectively. The differences between different IGM models are much larger in the former case than the latter, implying that the importance of IGM absorption for reionization's morphology is sensitive to the clustering properties of the sources.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>The Lyman-alpha forest</h1>
+        <p>The Lyman-alpha forest of high-redshift quasars is one of, if not the most powerful observable we have at present to constrain the progress of reionization. Nearly a decade ago, the forest provided the first evidence that reionization may not have completely ended by z = 6 (<a href="https://arxiv.org/abs/1407.4850">Becker+15</a>), and subsequent studies have supported this view from a number of angles. Today, numerous studies have characterized relationship between forest statistics and the progress of reionization, approaching a consensus picture of reionization's ending stages. I have led or been involved with several works on the forefront of interpreting forest observations.</p>
+        <figure class="left">
+          <a href="images/emissivity_lit_comparison.png"><img src="images/emissivity_lit_comparison.png" alt="Ionizing emissivity in several simulations compared to a galaxy-based model"></a>
+          <figcaption><a href="https://arxiv.org/abs/2311.13638">Cain+24</a></figcaption>
+        </figure>
+        <p>I recently led a study, <a href="https://arxiv.org/abs/2311.13638">Cain+24</a>, that sought to explain a puzzling feature of most reionization simulations that reproduce observed forest properties at z &lt; 6. The image to the left shows the integrated ionizing emissivity from galaxies in several simulations that reproduce the evolution of the mean transmission in the forest, the evolution of the MFP, or both. The gray curve is a model based on high-redshift galaxy observations. A curious feature in the simulation results that is not suggested by galaxy observations is a rapid decline in emissivity at z &lt; 6, just when reionization is ending. Such a drop would demand rapid decline in the ionizing effeciency of galaxies over a time period of a few hundred Myr, at a time when the number of galaxies is rapidly growing. We investigated whether this drop is likely to be a physical effect, or if it could be an artifact resulting from deficiencies in modeling the physical conditions of the IGM in simulations.</p>
+        <figure class="left" style="clear: left;">
+          <a href="images/compare_all_sinks.png"><img src="images/compare_all_sinks.png" alt="Emissivity and forest mean transmission for models with extra sinks"></a>
+          <figcaption><a href="https://arxiv.org/abs/2311.13638">Cain+24</a></figcaption>
+        </figure>
+        <p>We investigated a number of possible physical effects that, if modeled incorrectly, could cause the drop. The image on the left compares the emissivity (left) and the mean transmission of the forest (right) for a reference model (black curve) and two models that add extra ionizing photon absorbers (sinks) to the IGM. The first (orange dashed curve) presumes that small, hard-to-resolve sinks are missing from the simulations, and the other (blue dotted curve) assumes that the opacity originating from massive halos is under-estimated. Only the third model lacks a significant decline in emissivity at z &lt; 6 - indeed, this was the only effect we found could (at least partially) alleviate the need for evolution in galaxy ionizing properties. These findings indicate that such evolution is likely to be, at least in part, a physical effect, and motivate further exploration of possible mechanisms to explain such evolution.</p>
+
+        <figure class="left" style="clear: left;">
+          <a href="images/stack_xHI_z.png"><img src="images/stack_xHI_z.png" alt="Lower limit on the neutral fraction at z = 5.8 from damping wings"></a>
+          <figcaption><a href="https://arxiv.org/abs/2405.12275">Zhu+24</a></figcaption>
+        </figure>
+        <p>Just this year, the forest produced the first direct evidence for the presence of "islands" of neutral hydrogen below z = 6. This was accomplished through the detection of damping wing signatures in the forest - which could only be produced by the presence of fully neutral hydrogen. In <a href="https://arxiv.org/abs/2405.12275">Zhu+24</a>, these signatures were detected by stacking the Lyman alpha transmission profiles around the edges of "dark gaps" in the Lyman beta forest - regions with no detectable transmission that could be caused by neutral islands. I aided this study by providing results from FlexRT simulations that could be used to interpret the damping wing measurements. The figure on the left shows the lower limit on the neutral fraction at z = 5.8 resulting from this study, which shows that reionization ended at z &lt; 6.</p>
+
+        <!-- NOTE: on Wix, the Gangolli+24 links pointed to the same arXiv page as Zhu+24 (2405.12275). Replace with the correct arXiv link. -->
+        <figure class="left" style="clear: left;">
+          <a href="images/gangolli24_sightline.png"><img src="images/gangolli24_sightline.png" alt="Temperature, ionized fraction and photo-ionization rate around a low-opacity sightline"></a>
+          <figcaption><a href="https://arxiv.org/abs/2405.12275">Gangolli+24</a></figcaption>
+        </figure>
+        <p>I also aided a recent theoretical study of the relationship between Lyman alpha forest opacity and galaxy density at z &lt; 6, <a href="https://arxiv.org/abs/2405.12275">Gangolli+24</a>. In this study, we looked into the physics that determines this relationship, and whether it can be used to constrain reionization and galaxy ionizing properties. We also sought to interpret recent measurements of the opacity-density relation which suggested, in contrast to most models, the most opaque and transmissive sightlines in the forest both intersect galaxy under-densities (<a href="https://arxiv.org/abs/2308.13064">Christenson+23</a>). The image on the left shows the physical properties around a low-opacity sightline intersecting a galaxy under-density (clockwise from top left: temperature, ionized fraction, photo-ionization rate). Our findings suggest that the observations are most consistent with a late-ending reionization scenario, and are relatively insensitive to the clustering properties of the sources.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>Properties of High-Redshift Galaxies</h1>
+        <p>In the past two years, JWST has revolutionized our understanding of high-redshift galaxies. Within this short time, it has allowed us to take a census of the galaxy population deep into reionization for the first time. Among other things, it has also facilitated measurements of the intrinsic ionizing efficiency - the production rate of ionizing photons per non-ionizing photons - in large samples of galaxies up to z = 9. Taken together, these measurements provide a crucial window into the ionizing properties of the galaxies that likely drove the reionization process.</p>
+        <p>Historically, it has been challenging to explain how galaxies could generate the required ionizing output to complete reionization, given their fairly low ionizing efficiencies and escape fractions measured at much lower redshifts. However, it was recently pointed out (Munoz+24) that recent JWST measurements at z &gt; 6, combined with reasonable expectations for escape fractions at high redshift, may suggest that galaxies produced too many ionizing photons, which would cause reionization to end too early.</p>
+        <div class="figure-stack">
+          <figure>
+            <a href="images/ion_history_tau.png"><img src="images/ion_history_tau.png" alt="Three reionization histories and their CMB optical depths"></a>
+            <figcaption><a href="https://arxiv.org/abs/2409.02989">Cain+24</a></figcaption>
+          </figure>
+          <figure>
+            <a href="images/UVLF_plot.png"><img src="images/UVLF_plot.png" alt="Escaping ionizing efficiency required by each reionization model"></a>
+            <figcaption><a href="https://arxiv.org/abs/2409.02989">Cain+24</a></figcaption>
+          </figure>
+        </div>
+        <p>The top panel of the image on the left shows three representative reionization histories, the properties of which I studied recently in <a href="https://arxiv.org/abs/2409.02989">Cain+24</a>. The blue dot-dashed curve starts reionization early (z ~ 13) and ends early (z ~ 8), and is consistent with the fiducial model proposed in Munoz+24. However, this model is in tension with the Lyman alpha forest, which requires a z &lt; 6 end to reionization. The other two are alternatives that end reionization at z &lt; 6 - one that starts early (red dashed curve) and another that starts late (black solid curve). The bottom curve shows their CMB optical depths, compared to recent measurements. The second image on the left plots the escaping ionizing efficiency - the total ionizing emissivity divided by UV luminosity density - required by each of these models. The gray dashed curve shows the model of Munoz+24, with which the blue dotted curve agrees (by construction). The black curve (late start/late end) is scales down the blue curve by a factor of 5 at all redshifts, and produces a reionization history that agrees well with the Lyman alpha forest. By contrast, starting reionization early at z ~ 13 but still ending late requires a scenario like the red dashed curve, which has an order of magnitude evolution in escaping ionizing efficiency between z = 10 and 6. Such evolution would require significant changes in the physical characteristics of galaxies during this period, motivating a thorough investigation of reionization's early stages.</p>
+        <p>In the remainder of that study, we investigated the compatibility of our late-ending models with a wide variety of reionization probes, in an effort to determine whether a late or early start to reionization is favored by current observations. We found that none of the observables we looked at could conclusively distinguish between the scenarios, but that collectively the data displays a mild preference for a late start. This study motivates efforts to synergize information across many observables to constrain reionization.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="affil">
+        <p class="name">CHRISTOPHER CAIN</p>
+        <p>Beus Postdoctoral Fellow</p>
+        <p>Beus Center for Cosmic Foundations</p>
+        <p>School of Earth &amp; Space Exploration</p>
+        <p>Arizona State University</p>
+      </div>
+      <div>
+        <p>Email: <a href="mailto:clcain3@asu.edu">clcain3@asu.edu</a></p>
+        <p>Address: 1151 S Forest Ave, Tempe, AZ</p>
+        <p>Office: ISTB4-496</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

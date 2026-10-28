@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The IGM on Small Scales | Christopher Cain</title>
+  <meta name="description" content="Research on the response of the intergalactic medium to reionization on small scales.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Menu bar (same on every page; edit all four files if you change it) ===== -->
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#talks">Talks &amp; News</a></li>
+      <li><a href="files/CV.pdf">My CV</a></li>
+    </ul>
+  </nav>
+
+  <header class="banner light" style="background-image: url('images/banner-igm.jpg'); text-align: center;">
+    <div class="container">
+      <h1 style="margin: 0 auto;">The Intergalactic Medium on Small Scales</h1>
+    </div>
+  </header>
+
+  <main class="bg-igm">
+
+    <section>
+      <div class="container">
+        <h1>Response of the IGM to Reionization</h1>
+        <p>Heating of the IGM by reionization drives a hydrodynamic response over a timescale of several hundred Myr. After being heated, the dense, previously cold gas clumps are over-pressured, causing them to "puff out" - a process known as "Jeans smoothing". This process evacuates gas from so-called "mini-halos" with masses between 10<sup>4</sup> and 10<sup>8</sup> times the mass of the sun. Jeans smoothing of mini-halo gas is important for several reasons, including: (1) it affects the recombination rate in the ionized IGM, (2) it affects the self-shielding properties of mini-halos and (3) it affects the small-scale thermal structure of the IGM.</p>
+
+        <figure class="left">
+          <a href="images/jeans_smoothing_daloisio20.png"><img src="images/jeans_smoothing_daloisio20.png" alt="Slices through a 1 Mpc/h simulation showing Jeans smoothing at several stages"></a>
+          <figcaption><a href="https://arxiv.org/abs/2002.02467">D'Aloisio+20</a></figcaption>
+        </figure>
+        <p>The image on the left, from <a href="https://arxiv.org/abs/2002.02467">D'Aloisio+20</a>, illustrates the Jeans smoothing process at several stages during reionization. Each panel shows a slice through a high-resolution hydrodynamical/radiative transfer simulation in a 1 Mpc/h box with 1 kpc/h spatial resolution. Capturing this process accurately necessitates very high spatial resolution to resolve the relevant mini-halo structures, and coupled hydrodynamics and radiative transfer to model the interplay between self-shielding of dense gas and Jeans smoothing. In the upper left panel, the gas has been ionized for only 10 Myr, insufficient time for the gas to hydrodynamically respond to heating. In this panel, the gas is clumpy down to very small scales, reflecting its previously low temperature prior to being ionized. The top right, lower left, and lower right panels show the same slice after 60, 150, and 300 Myr, respectively. Over this time, much of the small-scale structure visible in the upper left is destroyed by Jeans smoothing, leaving the IGM in a visibly less clumpy state.</p>
+        <p>We further explored the effect of Jeans smoothing on the recombination rate and ionizing photon budget of reionization in this work. We found that, compared to a model in which the IGM is fully Jeans-smoothed, accounting for the presence of small-scale structures in the process of being destroyed by reionization can delay reionization's end by 0.5-1 redshifts, depending on whether reionization occurred rapidly or gradually. We also commented on the evolution of the ionizing photon mean free path in our simulations - a key ingredient of accurate reionization models and an observable measurable from the spectra of high-redshift quasars.</p>
+
+        <figure class="left small" style="clear: left;">
+          <a href="images/NHI_vs_density_mean_density.png"><img src="images/NHI_vs_density_mean_density.png" alt="Central gas density versus column density for photo-evaporating and relaxing absorbers"></a>
+          <figcaption><a href="https://arxiv.org/abs/2108.04837">Nasir+21</a></figcaption>
+        </figure>
+        <p>In a follow-up paper, <a href="https://arxiv.org/abs/2108.04837">Nasir+21</a>, we studied the statistics and physical properties of dense gas clumps (termed "absorbers" or "sinks") responsible for setting the recombination rate in the ionized IGM. We studied the absorbers during the early and late stages of the Jeans-smoothing process - the latter of which we refer to as the "relaxed" IGM. We found that absorbers broadly fall into two categories - those harboring self-shielding, fully neutral cores, and those that are highly ionized all the way through but are sufficiently dense to be optically thick to Lyman-Limit photons. We term these "photo-evaporating" and "relaxing" absorbers, respectively. We found that the former contribute significantly to the IGM opacity in gas that was ionized within a few 10s of Myr, but after several hundred Myr most self-shielding structures are evaporated and destroyed by reionization, and most of the opacity arises from highly ionized absorbers and the diffuse, low-density IGM.</p>
+        <p>The image on the left shows the distribution of central gas densities (y-axis) and column densities (x-axis) for photo-evaporating (red) and relaxing (blue) absorbers in a simulation reionized at z = 8. In the top panel, at z = 7.9, absorbers of both types are numerous, and some structures with over-densities &lt; 10 still retain some self-shielded neutral gas. By z = 7.5, the two populations have cleanly separated in parameter space, with neutral gas found only in absorbers with log(N<sub>HI</sub>) &gt; 18 and densities above 100. By z = 6.5, Jeans smoothing has destroyed most of the absorbers, and neutral gas is found only in absorbers with densities of several hundred or more and column densities log(N<sub>HI</sub>) &gt; 19.5. These findings demonstrate that Jeans smoothing drives dramatic evolution in the physical properties of absorbers during reionization.</p>
+        <p>We are presently working on a new and improved suite of simulations similar to the ones described here, which have already been used to study the small-scale temperature/density relation in the IGM (see below). Check back soon for more exciting results from these new simulations.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>Baryon-dark matter streaming velocities</h1>
+        <figure class="left">
+          <a href="images/clump_vs_time.png"><img src="images/clump_vs_time.png" alt="Evolution of the IGM clumping factor with and without streaming velocities"></a>
+          <figcaption><a href="https://arxiv.org/abs/2004.10209">Cain+20</a></figcaption>
+        </figure>
+        <p>Concurrent with the first study described above, I led a study (<a href="https://arxiv.org/abs/2004.10209">Cain+20</a>) focused on the effects of baryon-dark matter relative velocities on small-scale clumping in the IGM. Termed "streaming velocities", these velocity offsets between dark matter and baryons are sourced at cosmic recombination due to baryon accoustic oscillations (BAOs). Streaming velocities delay the formation of the first stars by making it harder for baryons to collapse into low-mass dark matter halos. For this same reason, streaming velocities suppress the formation of small-scale structures that later act as sinks during reionization. We ran IGM simulations with and without stream velocities to assess their importance for small-scale IGM evolution during reionization.</p>
+        <p>The top image on the left shows the evolution of the IGM clumping factor, defined as the ratio of the recombination rate with that of a spatially homogeneous IGM, in our simulations with different reionization redshifts, photo-ionization rates, and streaming velocities (see legend). The left panels show the clumping factors and the right panels show the ratios with and without streaming velocities. Simulations with higher stream velocities have lower recombination rates than those without, but only for a few 10s of Myr after ionization. At later times, Jeans smoothing erases most of the differences, resulting in a small effect on the integrated recombination rate throughout reionization.</p>
+        <figure class="left" style="clear: left;">
+          <a href="images/bao_21cm_signal.png"><img src="images/bao_21cm_signal.png" alt="BAO signature from streaming velocities in the 21 cm power spectrum"></a>
+          <figcaption><a href="https://arxiv.org/abs/2004.10209">Cain+20</a></figcaption>
+        </figure>
+        <p>Streaming velocities fluctuate on large spatial scales, and can imprint BAO-like signatures in the power spectra of quantities they affect. Their large-scale modulation of the recombination rate changes the local timing of reionization in different parts of the universe, imprinting a BAO signature in the 21 cm power spectrum from reionization. The shaded blue region in the image on the left compares the expected signal to the dominant contribution from density and ionization fluctuations at z = 10 under optimistic assumptions about their amplitude. Unfortunately, the signal is not likely detectable even under optimistic assumptions in the near future.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>Dark matter &amp; small-scale IGM structure</h1>
+        <p>The clumping of IGM gas on small-scales is guided by the small-scale clumping of the underlying dark matter, which provides the backbone on which the cosmic web grows. Some candidate dark matter cosmologies alternative to the standard Cold Dark Matter (CDM) paradigm predict a suppression or enhancement of structure formation on the smallest scales relative to CDM. The ionizing photon mean free path is sensitive to structure on mass scales less than 10<sup>8</sup> solar masses, a regime largely inaccessible to existing cosmological probes of small-scale dark matter structure. In <a href="https://arxiv.org/abs/2207.02876">Cain+22</a>, we explored the possibility that measurements of the mean free path could be used to distinguish competing dark matter models.</p>
+        <figure class="left">
+          <a href="images/cdm_vs_wdm_slices.png"><img src="images/cdm_vs_wdm_slices.png" alt="Gas density slices in CDM and warm dark matter cosmologies"></a>
+          <figcaption><a href="https://arxiv.org/abs/2207.02876">Cain+22</a></figcaption>
+        </figure>
+        <p>The image on the left shows slices through 2 Mpc/h hydrodynamical simulations of IGM gas structure in the CDM paradigm (left), and two warm dark matter (WDM) cosmologies with different particle masses at z = 6. The smaller the particle mass, the more the dark matter structure is suppressed on small scales. In the top row, we show simulations that have not been re-ionized - meaning the gas is cold and sees maximal clumping (the "un-relaxed" limit). In this regime, the dark matter models are all dramatically different, suggesting that the mean free path may be able to distinguish clearly between them. However, in the bottom row, we show the same slices in simulations that have been reionized and heated long ago. In this case, Jeans smoothing erases nearly all the differences between the CDM and 3 keV WDM models.</p>
+        <figure class="left small" style="clear: left;">
+          <a href="images/mfp_wdm_ratio.png"><img src="images/mfp_wdm_ratio.png" alt="Ratio of the mean free path in WDM and CDM cosmologies"></a>
+          <figcaption><a href="https://arxiv.org/abs/2207.02876">Cain+22</a></figcaption>
+        </figure>
+        <p>The image on the left shows the ratio of the mean free path in the two WDM cosmologies with the CDM one (curves) alongside shaded regions indicating the spread in MFP values arising from uncertainties in the measured IGM photo-ionization rate. This is one of several major sources of uncertainty associated with using the MFP to constrain alternative dark matter models. The size of the uncertainty relative to that of the effect of DM clumping indicates that the MFP is unlikely to be a useful probe of small-scale dark matter structure until uncertainties associated with the reionization process are considerably reduced. A chief reason for this is mentioned above - that the effects of Jeans smoothing erase much of the difference between dark matter models on the smallest scales.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>IGM thermal structure</h1>
+        <p>The small-scale thermal structure of the IGM is an important ingredient in models of the high-redshift Lyman alpha forest, which among other things is used to constrain the particle masses of candidate alternative dark matter models. Jeans smoothing of IGM small-scale structure has a significant effect on the distribution of temperatures in the IGM, because expanding (compressing) gas is cooled (heated) adiabatically. Resolving these effects can have a considerable effect on the relationship between IGM temperature and density. We studied this effect in detail in <a href="https://arxiv.org/abs/2405.02397">Cain+24</a>.</p>
+        <figure class="left">
+          <a href="images/TD_vis.png"><img src="images/TD_vis.png" alt="Density and temperature slices at two resolutions"></a>
+          <figcaption><a href="https://arxiv.org/abs/2405.02397">Cain+24</a></figcaption>
+        </figure>
+        <p>The image on the left shows slices through the density and temperature fields in high-resolution hydro/RT simulations in 2 Mpc/h boxes. These boxes were re-ionized at z = 7, and displayed at z = 6 (left columns) and 4 (right columns). The top row shows results for a simulation with N = 256<sup>3</sup> gas and RT cells, and the second row for one with N = 1024<sup>3</sup>. The bottom row shows a zoom-in on a 200 kpc/h region around a large over-density. The high-resolution run shows significant deviations from a tight power-law temperature-density relationship, an approximation often assuming in analytical treatments and often reflected in numerical simulations that do not resolve Jeans smoothing. These deviations arise from the adiabatic cooling of dense clumps as they expand, and adiabatic heating of the surrounding, compressed gas. These effects can persist until z = 4 or later in gas reionized at z &lt; 7, suggesting they may be important for the post-reionization Lyman alpha forest.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="affil">
+        <p class="name">CHRISTOPHER CAIN</p>
+        <p>Beus Postdoctoral Fellow</p>
+        <p>Beus Center for Cosmic Foundations</p>
+        <p>School of Earth &amp; Space Exploration</p>
+        <p>Arizona State University</p>
+      </div>
+      <div>
+        <p>Email: <a href="mailto:clcain3@asu.edu">clcain3@asu.edu</a></p>
+        <p>Address: 1151 S Forest Ave, Tempe, AZ</p>
+        <p>Office: ISTB4-496</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
