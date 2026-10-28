@@ -14,6 +14,7 @@
   --flexrt-bg:     #cecece;
   --igm-bg:        #e9c58c;
   --obs-bg:        #c8e5f0;
+  --cosmo-bg:      #ddd5ee;  /* lavender */
 
   --text:          #1d1d1d;
   --footer-text:   #f2f2f2;
@@ -163,6 +164,11 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
   background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/jwst.jpg");
 }
 .banner-obs h1 { padding-left: 118px; }
+.banner-cosmo {
+  min-height: 388px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/banner-cosmology.jpg");
+}
+.banner-cosmo h1 { padding-left: 118px; }
 
 /* ---------- Section background colors ---------- */
 .bg-about    { background: var(--about-bg); }
@@ -171,6 +177,7 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
 .bg-flexrt   { background: var(--flexrt-bg); }
 .bg-igm      { background: var(--igm-bg); }
 .bg-obs      { background: var(--obs-bg); }
+.bg-cosmo    { background: var(--cosmo-bg); }
 
 /* ---------- About me ---------- */
 .about-grid {
@@ -285,8 +292,8 @@ figure a img { cursor: zoom-in; }
   .hero-box { padding: 28px 24px 32px; }
   .hero-box h1 { font-size: 2.2rem; }
   .image-credit { margin-top: 40px; }
-  .banner-flexrt, .banner-igm, .banner-obs { min-height: 220px; }
-  .banner h1, .banner-obs h1 { font-size: 2rem; padding-left: 0; }
+  .banner-flexrt, .banner-igm, .banner-obs, .banner-cosmo { min-height: 220px; }
+  .banner h1, .banner-obs h1, .banner-cosmo h1 { font-size: 2rem; padding-left: 0; }
   .about-grid { grid-template-columns: 1fr; }
   .about-grid .portrait { margin: 0 auto; }
   figure.right, figure.left, figure.small, .figure-stack, .obs-grid {

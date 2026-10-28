@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reionization and Cosmology | Christopher Cain</title>
+  <meta name="description" content="Reionization as a tool for cosmology: the CMB optical depth, the DESI-CMB tension, and fast models of reionization for cosmological inference.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== Menu bar (same on every page; edit all four files if you change it) ===== -->
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#talks">Talks &amp; News</a></li>
+      <li><a href="files/CV.pdf">My CV</a></li>
+    </ul>
+  </nav>
+
+  <header class="banner dark banner-cosmo">
+    <div class="container">
+      <h1>Reionization as a<br> Tool for Cosmology</h1>
+    </div>
+  </header>
+
+  <main class="bg-cosmo">
+
+    <section>
+      <div class="container">
+        <h1>The DESI-CMB &tau;ension</h1>
+        <p>Reionization is an important ingredient in precision cosmology because it sets the CMB optical depth, the least well-constrained parameter of the standard cosmological model. This has recently taken on new importance. Measurements of baryon acoustic oscillations (BAO) by the Dark Energy Spectroscopic Instrument (DESI) have highlighted possible tensions in the standard &Lambda;CDM model which, when combined with the CMB, favor a sum of neutrino masses below the minimum allowed by neutrino oscillation experiments. Because the optical depth is degenerate with other cosmological parameters in the small-scale CMB data, these tensions are significantly weakened if the optical depth is &approx; 0.09, rather than the value of 0.058 measured from <i>Planck</i>'s large-scale polarization data. Whether such a high optical depth is allowed depends crucially on what we know about reionization.</p>
+        <figure class="left small" style="clear: left;">
+          <a href="images/tau_interpretation_cain25c.png"><img src="images/tau_interpretation_cain25c.png" alt="Illustration of reionization histories with increasing optical depth, with and without a Lyman alpha forest constraint on the end of reionization"></a>
+          <figcaption><a href="https://arxiv.org/abs/2505.15899">Cain+25c</a></figcaption>
+        </figure>
+        <p>Traditionally, the optical depth is interpreted as a constraint on the midpoint of reionization. In <a href="https://arxiv.org/abs/2505.15899">Cain+25c</a>, we pointed out that once the end of reionization is fixed by the latest Lyman alpha forest constraints, the optical depth becomes a sensitive probe of reionization's duration as well. The image on the left illustrates this. In the standard picture (top), a higher optical depth simply shifts the reionization history to higher redshift, subject only to the requirement that reionization ends before z = 5.5. With the forest pinning the last 5% of reionization to z &approx; 5.6 (bottom), a higher optical depth instead requires reionization to start earlier and last longer. We then compared low and high values of the optical depth to upper limits on the patchy kSZ effect, which constrains reionization's duration, and found that an optical depth of 0.09 is in &approx; 2&sigma; tension with existing limits from the South Pole Telescope.</p>
+
+        <figure class="left small" style="clear: left;">
+          <a href="images/popIII_flash_history_aggarwal26.png"><img src="images/popIII_flash_history_aggarwal26.png" alt="Reionization histories and cumulative optical depth with and without an early Pop III.1 flash ionization phase"></a>
+          <figcaption><a href="https://arxiv.org/abs/2606.19459">Aggarwal+26</a></figcaption>
+        </figure>
+        <p>One way to reconcile a high optical depth with both the forest and the kSZ is an early phase of reionization driven by sources that are only weakly clustered, which adds optical depth without generating much kSZ power. In <a href="https://arxiv.org/abs/2606.19459">Aggarwal+26</a>, led by UC Riverside Ph.D. student Yash Aggarwal, we explored a concrete example: supermassive Pop III.1 stars, dark-matter-powered metal-free stars proposed as the progenitors of supermassive black holes. Self-regulating ionizing feedback between these stars imposes a minimum separation of ~1 cMpc between them, limiting large-scale ionization fluctuations and reducing the kSZ power on observationally relevant scales. The image on the left shows the global ionized fraction (top) and the cumulative optical depth (bottom) in a baseline model driven only by galaxies (dotted), and in models where Pop III.1 stars produce a "flash" of ionization centered at z = 20 (blue) or z = 25 (orange), followed by recombination before the galaxy-driven phase of reionization. Our fiducial model reaches an optical depth of 0.087 while ending reionization at z &lt; 6, as required by the forest, and evading the most conservative 2&sigma; upper limits on the kSZ signal from the latest South Pole Telescope data. More broadly, our findings motivate further exploration of early reionization by weakly clustered sources as a possible resolution of tensions between BAO and CMB measurements.</p>
+
+        <p style="clear: left;">Incorporating reionization into cosmological analyses requires fast models that can be evaluated many times in a Bayesian inference. With few exceptions, existing fast analytical treatments model only the reionization history, which prevents them from taking full advantage of observables that constrain it indirectly. One such observable is the photo-ionization rate of the IGM, which can be inferred from the mean transmission of the Lyman alpha forest and is highly sensitive to the tail end of reionization. In <a href="https://arxiv.org/abs/2606.19449">Cain+26b</a>, we presented a new analytical formalism, based on the cosmological radiative transfer equation, that self-consistently predicts both the reionization history and the photo-ionization rate. Tested against radiative transfer simulations, our model is percent-level accurate in the reionization history and 20-30% accurate in the photo-ionization rate at z &lt; 6 - comparable to or better than current observational uncertainties.</p>
+        <figure class="wide">
+          <a href="images/gamma_sensitivity_cain26b.png"><img src="images/gamma_sensitivity_cain26b.png" alt="Ionizing emissivity re-scalings and the corresponding photo-ionization rates predicted by the analytical model, compared to measurements"></a>
+          <figcaption><a href="https://arxiv.org/abs/2606.19449">Cain+26b</a></figcaption>
+        </figure>
+        <p>The image above demonstrates the model's usefulness. The left panel shows the ionizing emissivity in one of our simulations (black), along with versions re-scaled by -10% to +30% (colors), compared to recent measurements. The right panel shows the photo-ionization rates our model predicts for each case, compared to measurements from the Lyman alpha forest. Shifts of just 10-20% in the emissivity produce changes in the photo-ionization rate larger than current measurement uncertainties, and the same is true for 5-10% shifts in the redshift at which reionization ends. We used this model in <a href="https://arxiv.org/abs/2610.28765">Lopez+26</a> (see <a href="interpreting-observations.html">Interpreting Observations</a>) to obtain tight joint constraints on reionization from the CMB and the forest, and expect it to be useful for incorporating more astrophysical constraints into analyses of cosmological data sets.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer (same on every page) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="affil">
+        <p class="name">CHRISTOPHER CAIN</p>
+        <p>Senior Postdoctoral Fellow</p>
+        <p>Kavli Institute for Cosmology</p>
+        <p>University of Cambridge</p>
+      </div>
+      <div>
+        <p>Email: <a href="mailto:clc218@cam.ac.uk">clc218@cam.ac.uk</a></p>
+        <p>Address: Kavli Institute for Cosmology, Madingley Road, Cambridge CB3 0HA, UK</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
