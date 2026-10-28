@@ -225,6 +225,9 @@ figure a img { cursor: zoom-in; }
 .obs-grid figure.span2 { grid-column: span 2; }
 .obs-grid img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .obs-grid figure.span2 img { aspect-ratio: 2.75 / 1; }
+/* Single-column variant: images stacked at their natural shapes */
+.obs-grid.stack { width: 40%; grid-template-columns: 1fr; }
+.obs-grid.stack img { aspect-ratio: auto; object-fit: initial; }
 .obs-grid .label,
 .obs-grid .credit {
   position: absolute;
@@ -296,7 +299,7 @@ figure a img { cursor: zoom-in; }
   .banner h1, .banner-obs h1, .banner-cosmo h1 { font-size: 2rem; padding-left: 0; }
   .about-grid { grid-template-columns: 1fr; }
   .about-grid .portrait { margin: 0 auto; }
-  figure.right, figure.left, figure.small, .figure-stack, .obs-grid {
+  figure.right, figure.left, figure.small, .figure-stack, .obs-grid, .obs-grid.stack {
     float: none;
     width: 100%;
     margin-left: 0;
