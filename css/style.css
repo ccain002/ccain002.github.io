@@ -92,17 +92,19 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
 /* ---------- Home-page banner ---------- */
 .hero {
   position: relative;
+  min-height: 574px;
   background: #000 url("../images/hero-reionization.jpg") center / cover no-repeat;
-  padding: 90px 24px 50px;
+  padding: 130px 24px 40px;
   text-align: center;
 }
 .hero-box {
-  max-width: 520px;
+  max-width: 515px;
   margin: 0 auto;
-  padding: 28px 32px 32px;
+  padding: 40px 40px 50px;
+  border-radius: 4px;
   background: var(--hero-box);
 }
-.hero-box h1 { margin: 0 0 0.6em; font-size: 2.2rem; }
+.hero-box h1 { margin: 0 0 0.9em; font-size: 2.5rem; }
 .hero-box h2 {
   margin: 0 0 0.3em;
   font-size: 1.3rem;
@@ -116,7 +118,7 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
   line-height: 1.6;
 }
 .image-credit {
-  margin: 48px auto 0;
+  margin: 70px auto 0;
   max-width: 520px;
   font-size: 0.8rem;
   color: #ddd;
@@ -124,22 +126,43 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
 .image-credit a { color: #ddd; }
 
 /* ---------- Page banners on the research pages ---------- */
+/* Heights and title sizes match the Wix banners at a 1400px-wide window.
+   Line breaks in the titles are set with <br> in each page's HTML. */
 .banner {
-  min-height: 260px;
   display: flex;
   align-items: center;
   background-color: #000;
   background-position: center;
   background-size: cover;
 }
+.banner > .container { width: 100%; }
 .banner h1 {
   margin: 0;
-  padding: 40px 0;
-  font-size: 2.6rem;
-  max-width: 640px;
+  padding: 30px 0 30px 82px;
+  font-size: 3.5rem;
+  line-height: 1.4;
 }
 .banner.light h1 { color: #111; text-shadow: 0 0 6px #fff, 0 0 16px rgba(255, 255, 255, 0.9); }
 .banner.dark h1  { color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6); }
+
+.banner-flexrt {
+  min-height: 395px;
+  background-color: #fff;
+  background-image: url("../images/banner-flexrt.png");
+  background-size: auto;  /* full size and centered, as on Wix */
+}
+.banner-igm {
+  min-height: 299px;
+  background-image: url("../images/banner-igm.jpg");
+  background-size: auto;  /* shown at full size, like Wix, so the filaments look zoomed in */
+  text-align: center;
+}
+.banner-igm h1 { padding-left: 0; line-height: 1.15; margin: 0 auto; }
+.banner-obs {
+  min-height: 388px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/jwst.jpg");
+}
+.banner-obs h1 { padding-left: 118px; }
 
 /* ---------- Section background colors ---------- */
 .bg-about    { background: var(--about-bg); }
@@ -257,8 +280,12 @@ figure a img { cursor: zoom-in; }
 @media (max-width: 720px) {
   body { font-size: 18px; }
   .site-nav ul { gap: 6px 20px; justify-content: center; }
-  .hero { padding-top: 50px; }
-  .banner h1 { font-size: 1.9rem; }
+  .hero { min-height: 0; padding-top: 50px; }
+  .hero-box { padding: 28px 24px 32px; }
+  .hero-box h1 { font-size: 2.2rem; }
+  .image-credit { margin-top: 40px; }
+  .banner-flexrt, .banner-igm, .banner-obs { min-height: 220px; }
+  .banner h1, .banner-obs h1 { font-size: 2rem; padding-left: 0; }
   .about-grid { grid-template-columns: 1fr; }
   .about-grid .portrait { margin: 0 auto; }
   figure.right, figure.left, figure.small, .figure-stack, .obs-grid {
