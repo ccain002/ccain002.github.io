@@ -180,6 +180,7 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
   align-items: start;
 }
 .about-grid .portrait { width: 240px; }
+.about-photo { text-align: center; }
 .cv-button {
   display: inline-block;
   margin-top: 18px;
