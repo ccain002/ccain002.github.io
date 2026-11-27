@@ -174,20 +174,23 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
   min-height: 388px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/banner-students.jpg");
 }
-.banner-students h1 { padding-left: 118px; }
+.banner-students h1 { padding-left: 0; }  /* long title: align with the page text to leave room for the photo grid */
 .banner-students { position: relative; }
 .banner-students > .container { position: relative; z-index: 1; }  /* keep the title above the fade */
 .banner-students::after {  /* dark fade from the simulation image into the photo grid */
   content: "";
   position: absolute;
   top: 0; right: 0; bottom: 0;
-  width: 760px;
+  width: calc(min(524px, 50vw - 170px) + 230px);
   background: linear-gradient(to right, rgba(8, 10, 20, 0), rgba(8, 10, 20, 0.85) 220px);
 }
 .banner-faces {
   position: absolute;
-  top: 10px; right: 10px; bottom: 10px;
+  top: 50%; right: 10px;
+  transform: translateY(-50%);
   z-index: 1;
+  /* full size (524 x 368) on wide screens; shrinks on medium screens so it never reaches the title */
+  width: min(524px, 50vw - 170px);
   aspect-ratio: 524 / 368;  /* 5 x 2 grid of portrait tiles */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -319,7 +322,7 @@ figure a img { cursor: zoom-in; }
 .site-footer .affil p { font-style: italic; font-size: 0.95rem; }
 
 /* ---------- Phones and narrow screens ---------- */
-@media (max-width: 1240px) {
+@media (max-width: 960px) {
   .banner-faces, .banner-students::after { display: none; }
 }
 
