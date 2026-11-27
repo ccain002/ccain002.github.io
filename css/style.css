@@ -181,17 +181,17 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
   content: "";
   position: absolute;
   top: 0; right: 0; bottom: 0;
-  width: 620px;
+  width: 760px;
   background: linear-gradient(to right, rgba(8, 10, 20, 0), rgba(8, 10, 20, 0.85) 220px);
 }
 .banner-faces {
   position: absolute;
   top: 10px; right: 10px; bottom: 10px;
   z-index: 1;
-  aspect-ratio: 1;
+  aspect-ratio: 524 / 368;  /* 5 x 2 grid of portrait tiles */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 6px;
 }
 .banner-faces img { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: 50% 20%; border-radius: 6px; }
@@ -319,7 +319,7 @@ figure a img { cursor: zoom-in; }
 .site-footer .affil p { font-style: italic; font-size: 0.95rem; }
 
 /* ---------- Phones and narrow screens ---------- */
-@media (max-width: 900px) {
+@media (max-width: 1240px) {
   .banner-faces, .banner-students::after { display: none; }
 }
 
