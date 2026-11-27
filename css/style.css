@@ -317,6 +317,7 @@ figure a img { cursor: zoom-in; }
     margin-right: 0;
   }
   .obs-grid { margin-bottom: 18px; }
+  .student-photo { width: 110px; margin-left: 16px; }
   .talks-table, .talks-table tbody, .talks-table tr, .talks-table td { display: block; width: 100%; }
   .talks-table thead { display: none; }
   .talks-table tr { border: 1px solid #333; margin-bottom: 10px; }
