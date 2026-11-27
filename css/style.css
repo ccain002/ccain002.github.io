@@ -175,6 +175,26 @@ section::after { content: ""; display: table; clear: both; }  /* contain floated
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/banner-students.jpg");
 }
 .banner-students h1 { padding-left: 118px; }
+.banner-students { position: relative; }
+.banner-students > .container { position: relative; z-index: 1; }  /* keep the title above the fade */
+.banner-students::after {  /* dark fade from the simulation image into the photo grid */
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 620px;
+  background: linear-gradient(to right, rgba(8, 10, 20, 0), rgba(8, 10, 20, 0.85) 220px);
+}
+.banner-faces {
+  position: absolute;
+  top: 10px; right: 10px; bottom: 10px;
+  z-index: 1;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 6px;
+}
+.banner-faces img { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: 50% 20%; border-radius: 6px; }
 
 /* Student-led projects: who led the work, and (optionally) their photo */
 .student-note { font-style: italic; }
@@ -299,6 +319,10 @@ figure a img { cursor: zoom-in; }
 .site-footer .affil p { font-style: italic; font-size: 0.95rem; }
 
 /* ---------- Phones and narrow screens ---------- */
+@media (max-width: 900px) {
+  .banner-faces, .banner-students::after { display: none; }
+}
+
 @media (max-width: 720px) {
   body { font-size: 18px; }
   .site-nav ul { gap: 6px 20px; justify-content: center; }
